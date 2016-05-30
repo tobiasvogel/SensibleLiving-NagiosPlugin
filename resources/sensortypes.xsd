@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema id="SensorTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SensorTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TypeList"/>
+        <xs:element maxOccurs="unbounded" ref="SensorType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TypeList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Version"/>
+        <xs:element ref="Date"/>
+        <xs:element ref="Author"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Version" type="xs:token"/>
+  <xs:element name="Date">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Day"/>
+        <xs:element ref="Month"/>
+        <xs:element ref="Year"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Day">
+    <xs:simpleType>
+      <xs:restriction base="xs:byte">
+        <xs:pattern value="(3[0-1]|0[1-9]|[1-2][0-9]|[1-9])"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Month">
+    <xs:simpleType>
+      <xs:restriction base="xs:byte">
+        <xs:pattern value="(3[0-1]|0[1-9]|[1-2][0-9]|[1-9])"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Year">
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:pattern value="((20)?[0-9][0-9])"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Author" type="xs:token"/>
+  <xs:element name="SensorType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Name"/>
+        <xs:element ref="Description"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+      <xs:attribute name="longUnit" type="xs:token"/>
+      <xs:attribute name="scalar" type="xs:decimal"/>
+      <xs:attribute name="unit" type="xs:token"/>
+    </xs:complexType>
+    <xs:unique name="uniqueId">
+      <xs:selector xpath="SensorType"/>
+      <xs:field xpath="id"/>
+    </xs:unique>
+  </xs:element>
+  <xs:element name="Name" type="xs:token"/>
+  <xs:element name="Description" type="xs:normalizedString"/>
+</xs:schema>

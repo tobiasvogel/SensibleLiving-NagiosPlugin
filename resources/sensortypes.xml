@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!DOCTYPE SensorTypes [
+<!ELEMENT Author ( #PCDATA ) >
+
+<!ELEMENT Date ( Day, Month, Year ) >
+
+<!ELEMENT Day ( #PCDATA ) >
+
+<!ELEMENT Description ( #PCDATA ) >
+
+<!ELEMENT Month ( #PCDATA ) >
+
+<!ELEMENT Name ( #PCDATA ) >
+
+<!ELEMENT SensorType ( Name, Description ) >
+<!ATTLIST SensorType id CDATA #REQUIRED >
+<!ATTLIST SensorType longUnit NMTOKEN #IMPLIED >
+<!ATTLIST SensorType scalar NMTOKEN #IMPLIED >
+<!ATTLIST SensorType unit NMTOKEN #IMPLIED >
+
+<!ELEMENT SensorTypes ( TypeList, SensorType+ ) >
+
+<!ELEMENT TypeList ( Version, Date, Author ) >
+
+<!ELEMENT Version ( #PCDATA ) >
+
+<!ELEMENT Year ( #PCDATA ) >
+]>
+
+<SensorTypes>
+  <TypeList>
+    <Version>0.0.0.1</Version>
+    <Date>
+      <Day>27</Day>
+      <Month>06</Month>
+      <Year>2016</Year>
+    </Date>
+    <Author>Tobias Vogel</Author>
+  </TypeList>
+  <SensorType id="1">
+    <Name>Moisture Sensor</Name>
+    <Description>House plant moisture Sensor</Description>
+  </SensorType>
+  <SensorType id="2" unit="F" longUnit="Fahrenheit" scalar="0.1">
+    <Name>Temperature Sensor</Name>
+    <Description>Temperature Sensor</Description>
+  </SensorType>
+  <SensorType id="3" unit="C" longUnit="Celsius" scalar="0.1">
+    <Name>Temperature Sensor</Name>
+    <Description>Temperature Sensor</Description>
+  </SensorType>
+  <SensorType id="4">
+    <Name>Water leak detector</Name>
+    <Description>Moisture detector for water leaks etc.</Description>
+  </SensorType>
+  <SensorType id="5" unit="F" longUnit="Fahrenheit" scalar="0.1">
+    <Name>Refrigerator Freezer Sensor</Name>
+    <Description>Refrigerator Freezer temperature Sensor</Description>
+  </SensorType>
+  <SensorType id="6" unit="C" longUnit="Celsius" scalar="0.1">
+    <Name>Refrigerator Freezer Sensor</Name>
+    <Description>Refrigerator Freezer temperature Sensor</Description>
+  </SensorType>
+  <SensorType id="7">
+    <Name>MQ2 Gas Sensor</Name>
+    <Description>Sensor for combustible gases like gasoline, butane, methane, alcohol, natural gas, propane, smoke etc.</Description>
+  </SensorType>
+  <SensorType id="8" unit="F" longUnit="Fahrenheit" scalar="0.1">
+    <Name>Humidity &amp; temperature Sensor</Name>
+    <Description>Humidity &amp; temperature Sensor</Description>
+  </SensorType>
+  <SensorType id="9" unit="C" longUnit="Celsius" scalar="0.1">
+    <Name>Humidity &amp; temperature Sensor</Name>
+    <Description>Humidity &amp; temperature Sensor</Description>
+  </SensorType>
+  <SensorType id="10" unit="F" longUnit="Fahrenheit" scalar="0.1">
+    <Name>Indoor Garden</Name>
+    <Description>Humidity &amp; temperature Sensor</Description>
+  </SensorType>
+  <SensorType id="11">
+    <Name>Quad Current Sensor</Name>
+    <Description>Quad AC Current Sensor</Description>
+  </SensorType>
+  <SensorType id="12">
+    <Name>Motion detector</Name>
+    <Description>Motion detection Sensor</Description>
+  </SensorType>
+  <SensorType id="13" unit="F" longUnit="Fahrenheit" scalar="0.1">
+    <Name>Pressure &amp; temperature Sensor</Name>
+    <Description>Pressure &amp; temperature Sensor</Description>
+  </SensorType>
+  <SensorType id="14" unit="C" longUnit="Celsius" scalar="0.1">
+    <Name>Pressure &amp; temperature Sensor</Name>
+    <Description>Pressure &amp; temperature Sensor</Description>
+  </SensorType>
+  <SensorType id="15">
+    <Name>Tilt Sensor</Name>
+    <Description>Tilt Sensor</Description>
+  </SensorType>
+  <SensorType id="16" unit="F" longUnit="Fahrenheit" scalar="0.1">
+    <Name>Moist, Humidity, PH, Light &amp; Temperature Sensor (F)</Name>
+    <Description>Moist, Humidity, PH, Light &amp; Temperature Sensor</Description>
+  </SensorType>
+  <SensorType id="17" unit="C" longUnit="Celsius" scalar="0.1">
+    <Name>Moist, Humidity, PH, Light &amp; Temperature Sensor (C)</Name>
+    <Description>Moist, Humidity, PH, Light &amp; Temperature Sensor</Description>
+  </SensorType>
+  <SensorType id="18">
+    <Name>Sensible Packet Relay</Name>
+    <Description>Remote Controlled switching relay</Description>
+  </SensorType>
+  <SensorType id="19">
+    <Name>Water level Sensor</Name>
+    <Description>Water level detection Sensor</Description>
+  </SensorType>
+  <SensorType id="20">
+    <Name>Custom Sensor</Name>
+    <Description>General purpose Sensor node</Description>
+  </SensorType>
+</SensorTypes>
